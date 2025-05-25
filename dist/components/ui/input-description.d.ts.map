@@ -1,0 +1,1 @@
+{"version":3,"file":"input-description.d.ts","sourceRoot":"","sources":["../../../src/components/ui/input-description.tsx"],"names":[],"mappings":"AACA,OAAO,KAAK,EAAE,SAAS,EAAE,MAAM,OAAO,CAAC;AAEvC,QAAA,MAAM,gBAAgB,GAAI,0BAGvB;IACD,SAAS,CAAC,EAAE,MAAM,CAAC;IACnB,QAAQ,EAAE,SAAS,CAAA;CACpB,mDAQA,CAAC;AAEF,OAAO,EAAE,gBAAgB,EAAE,CAAC"}
