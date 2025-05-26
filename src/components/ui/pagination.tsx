@@ -9,6 +9,7 @@ import {
 import { useMemo } from "react";
 import { Button } from "./button";
 import * as React from "react";
+import { Alert } from "./alert";
 
 interface PaginationItemProps {
   page: number;
@@ -71,6 +72,14 @@ function Pagination({
 
   if (totalPage <= 1) {
     return null;
+  }
+
+  if (currentPage > totalPage) {
+    return (
+      <Alert variant="destructive">
+        Current page must not greater than total page
+      </Alert>
+    );
   }
 
   const hasPrev = currentPage > 1;
