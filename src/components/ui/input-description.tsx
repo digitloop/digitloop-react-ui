@@ -1,12 +1,12 @@
 import { cn } from "@/lib/utils";
-import type { ReactNode } from "react";
+import * as React from "react";
 
 const InputDescription = ({
   className,
   children,
 }: {
   className?: string;
-  children: ReactNode
+  children: React.ReactNode
 }) => {
   if (!children) {
     return null;

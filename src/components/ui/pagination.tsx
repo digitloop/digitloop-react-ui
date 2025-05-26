@@ -6,20 +6,21 @@ import {
   ChevronsRightIcon,
   EllipsisIcon,
 } from "lucide-react";
-import { type ReactNode, useMemo } from "react";
+import { useMemo } from "react";
 import { Button } from "./button";
+import * as React from "react";
 
 interface PaginationItemProps {
   page: number;
   isActive?: boolean;
-  children?: ReactNode;
+  children?: React.ReactNode;
   searchParams: URLSearchParams;
 }
 
 interface PaginationProps {
   totalPage: number;
   currentPage: number;
-  renderItem: (props: PaginationItemProps) => ReactNode;
+  renderItem: (props: PaginationItemProps) => React.ReactNode;
   renderPage?: number;
   searchParams?: string;
 }
@@ -33,7 +34,7 @@ function Pagination({
 }: PaginationProps) {
   const params = useMemo(() => {
     const params = new URLSearchParams(searchParams);
-    // params.delete("page");
+    params.delete("page");
     // return params.size > 0 ? params.toString() : undefined;
     return params;
   }, [searchParams]);
@@ -113,7 +114,7 @@ function Pagination({
           </Button>
         </li>
         {totalPage !== renderPage && currentPage >= renderPage && (
-          <li className="cursor-not-allowed hidden lg:block">
+          <li className={cn("hidden lg:block")}>
             <Button variant="secondary" size="icon" asChild>
               {renderItem({
                 page: 1,
@@ -154,7 +155,7 @@ function Pagination({
         )}
         {totalPage !== renderPage &&
           totalPage - renderPage >= currentPage - 1 && (
-            <li className="cursor-not-allowed hidden lg:block">
+            <li className={cn("hidden lg:block")}>
               <Button variant="secondary" size="icon" asChild>
                 {renderItem({
                   page: totalPage,

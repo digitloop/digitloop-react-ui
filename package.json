@@ -1,28 +1,56 @@
 {
-  "name": "digitloop-react-ui",
+  "name": "@digitloop/react-ui",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "description": "Tailwindcss + Shadcn UI reuseable components",
   "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
-    "./components": {
-      "default": "./dist/components/index.js",
-      "types": "./dist/components/index.d.ts"
-    },
-    "./utils": {
-      "default": "./dist/lib/utils.d.ts",
-      "types": "./dist/lib/utils.js"
-    },
-    "./dist/nprogress.css": "./dist/nprogress.css"
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
   },
   "files": [
     "dist"
   ],
   "scripts": {
+    "dev": "vite",
+    "lint": "eslint .",
+    "preview": "vite preview",
     "clean": "rimraf dist",
-    "dev": "tsc --watch",
-    "tsc:build": "tsc",
+    "tsc:build": "tsc -p ./tsconfig.build.json",
+    "tsup:build": "tsup",
     "copy:assets": "cpx 'src/nprogress.css' dist",
-    "build": "npm run clean && npm run tsc:build && npm run copy:assets"
+    "build": "npm run tsup:build"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "tailwindcss": "^4.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.0",
+    "@tailwindcss/vite": "^4.1.7",
+    "@types/node": "^22.15.21",
+    "@types/nprogress": "^0.2.3",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react-swc": "^3.9.0",
+    "cpx2": "^8.0.0",
+    "eslint": "^9.25.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "rimraf": "^6.0.1",
+    "tailwindcss": "^4.1.7",
+    "tsup": "^8.5.0",
+    "tw-animate-css": "^1.3.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.30.1",
+    "vite": "^6.3.5"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",
@@ -39,7 +67,6 @@
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-switch": "^1.2.5",
     "@radix-ui/react-tooltip": "^1.2.7",
-    "@tailwindcss/vite": "^4.1.7",
     "@tanstack/react-table": "^8.21.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -48,25 +75,8 @@
     "lucide-react": "^0.511.0",
     "next-themes": "^0.4.6",
     "nprogress": "^0.2.0",
-    "react": "^19.1.0",
     "react-day-picker": "^8.10.1",
-    "react-dom": "^19.1.0",
     "sonner": "^2.0.3",
-    "tailwind-merge": "^3.3.0",
-    "tailwindcss": "^4.1.7"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.25.0",
-    "@types/node": "^22.15.21",
-    "@types/nprogress": "^0.2.3",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
-    "cpx2": "^8.0.0",
-    "eslint": "^9.25.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "rimraf": "^6.0.1",
-    "typescript": "~5.8.3",
-    "typescript-eslint": "^8.30.1"
+    "tailwind-merge": "^3.3.0"
   }
 }

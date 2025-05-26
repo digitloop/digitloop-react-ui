@@ -1,4 +1,5 @@
 import { Label } from "./label";
+import * as React from "react";
 
 const InputLabel = ({
   className,

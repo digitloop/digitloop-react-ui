@@ -1,3 +1,4 @@
+import * as React from "react";
 import { cn } from "@/lib/utils";
 import {
   type ColumnDef,
@@ -7,7 +8,7 @@ import {
   type TableOptions,
   useReactTable,
 } from "@tanstack/react-table";
-import { Fragment, type ReactNode } from "react";
+import { Fragment } from "react";
 import {
   Table,
   TableBody,
@@ -101,7 +102,7 @@ function DataTableColumnHeader<TData>({
 }: {
   column: ColumnDef<TData>;
   className?: string;
-  children?: ReactNode;
+  children?: React.ReactNode;
 }) {
   return (
     <TableHead className={cn("text-sm", className)}>{children}</TableHead>
@@ -114,7 +115,7 @@ function DataTableColumnCell<TData>({
 }: {
   row: Row<TData>;
   className?: string;
-  children?: ReactNode;
+  children?: React.ReactNode;
 }) {
   return <TableCell className={className}>{children}</TableCell>;
 }
