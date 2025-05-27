@@ -11,6 +11,9 @@ on: workflow_dispatch
   # Allows you to run this workflow manually from the Actions tab
   # workflow_dispatch:
 
+permissions:
+  contents: write
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -36,6 +39,9 @@ jobs:
             exit 1
           fi
       
+      - name: Remove package-lock.json
+        run: rm -f package-lock.json
+        
       - name: Install dependencies
         run: npm install --legacy-peer-deps
       
@@ -52,7 +58,7 @@ jobs:
           git config user.email "github-actions@github.com"
 
           git checkout -b release-$VERSION
-          git add -f dist
+          git add -f ./dist
           git add LICENSE
           git add README.md
           git add package.json
