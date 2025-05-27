@@ -20,7 +20,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "preserveSymlinks": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "outDir": "dist",
     "rootDir": "src",
     "baseUrl": ".",

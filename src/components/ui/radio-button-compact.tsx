@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Label } from "./label";
 import { RadioButton } from "./radio-button";
 
