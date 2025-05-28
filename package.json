@@ -1,7 +1,7 @@
 {
   "name": "@digitloop/react-ui",
   "private": true,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Tailwindcss + Shadcn UI reuseable components",
   "type": "module",
   "main": "dist/index.js",
